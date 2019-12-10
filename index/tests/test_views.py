@@ -12,3 +12,8 @@ class BlogTests(TestCase):
     def blog_detail_view(self):
         response = self.client.get('/post/1/')
         self.assertEqual(response.status_code,200)
+
+    def test_post_creation(self):
+        c = Client()
+        response = c.post('/post/new/',{'title': 'new title', 'body':'new text'})
+        self.assertEqual(response.status_code, 200)

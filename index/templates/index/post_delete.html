@@ -1,0 +1,10 @@
+
+{% block content %}
+	<h1>Delete post</h1>
+
+	<form method="post">
+		{% csrf_token %}
+		<p>Are you sure you want to delete {{ object.title }} ?</p>
+		<button type="Submit"> Delete</button>
+	</form>
+{% endblock content %}
